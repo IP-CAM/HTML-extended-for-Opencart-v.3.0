@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modification>
+    <name>Html Extended Modification</name>
+    <code>default</code>
+    <version>1.0</version>
+    <author>vagan.yahoo</author>
+    <file path="system/library/template/twig.php">
+        <operation>
+            <search>
+                <![CDATA[$this->twig = new \Twig_Environment($loader, $config);]]>
+            </search>
+            <add position="after">
+                <![CDATA[
+		$this->twig->addExtension(new Twig_Extension_StringLoader());]]>
+            </add>
+        </operation>
+    </file>
+</modification>
